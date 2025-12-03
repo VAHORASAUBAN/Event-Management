@@ -3,7 +3,6 @@
 Follow the steps below to set up and run the Event Management API project on your local machine.
 
 ---
-
 ## 🔧 1. Clone the Repository
 
 ```bash
