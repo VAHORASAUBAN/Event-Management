@@ -11,13 +11,7 @@ from .serializers import EventSerializer, RSVPSerializer, ReviewSerializer
 from .permissions import IsOrganizerOrReadOnly, IsInvitedOrPublic
 
 class EventViewSet(viewsets.ModelViewSet):
-    """
-    - POST /events/
-    - GET /events/
-    - GET /events/{id}/
-    - PUT/PATCH /events/{id}/
-    - DELETE /events/{id}/
-    """
+
 
     serializer_class = EventSerializer
     queryset = Event.objects.all()
@@ -44,9 +38,7 @@ class EventViewSet(viewsets.ModelViewSet):
 
 
 class EventRSVPCreateView(generics.CreateAPIView):
-    """
-    POST /events/{event_id}/rsvp/
-    """
+
 
     serializer_class = RSVPSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -65,10 +57,6 @@ class EventRSVPCreateView(generics.CreateAPIView):
 
 
 class EventRSVPUpdateView(generics.UpdateAPIView):
-    """
-    PATCH /events/{event_id}/rsvp/{user_id}/
-    (Usually user updates their own RSVP; organizer could also be allowed if needed.)
-    """
 
     serializer_class = RSVPSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -86,10 +74,6 @@ class EventRSVPUpdateView(generics.UpdateAPIView):
 
 
 class EventReviewListCreateView(generics.ListCreateAPIView):
-    """
-    GET /events/{event_id}/reviews/
-    POST /events/{event_id}/reviews/
-    """
 
     serializer_class = ReviewSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
