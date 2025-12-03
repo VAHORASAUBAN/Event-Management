@@ -4,8 +4,6 @@ from rest_framework import status
 from rest_framework.test import APITestCase
 from rest_framework_simplejwt.tokens import RefreshToken
 from events.models import Event
-
-
 class EventAPITestCase(APITestCase):
     def setUp(self):
         self.user = User.objects.create_user(
