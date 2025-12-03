@@ -1,7 +1,5 @@
 # Event-Management
 
-# Event Management System – Setup Instructions
-
 Follow the steps below to set up and run the Event Management API project on your local machine.
 
 ---
