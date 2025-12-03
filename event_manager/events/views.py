@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
+from django.db import models 
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, generics, permissions, status, filters
 from rest_framework.response import Response
@@ -8,7 +9,6 @@ from rest_framework.exceptions import PermissionDenied
 from .models import Event, RSVP, Review
 from .serializers import EventSerializer, RSVPSerializer, ReviewSerializer
 from .permissions import IsOrganizerOrReadOnly, IsInvitedOrPublic
-
 
 class EventViewSet(viewsets.ModelViewSet):
     """
